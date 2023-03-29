@@ -28,35 +28,47 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.pBGrabImage = new System.Windows.Forms.PictureBox();
+            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
+            ((System.ComponentModel.ISupportInitialize)(this.pBGrabImage)).BeginInit();
             this.SuspendLayout();
             // 
-            // pictureBox1
+            // pBGrabImage
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(12, 12);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(329, 326);
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
+            this.pBGrabImage.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pBGrabImage.Location = new System.Drawing.Point(0, 0);
+            this.pBGrabImage.Name = "pBGrabImage";
+            this.pBGrabImage.Size = new System.Drawing.Size(390, 397);
+            this.pBGrabImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pBGrabImage.TabIndex = 0;
+            this.pBGrabImage.TabStop = false;
+            this.pBGrabImage.DoubleClick += new System.EventHandler(this.pictureBox1_DoubleClick);
+            // 
+            // saveFileDialog1
+            // 
+            this.saveFileDialog1.DefaultExt = "png";
+            this.saveFileDialog1.FileName = "image.png";
+            this.saveFileDialog1.Filter = "PNG Files|*.png";
+            this.saveFileDialog1.Title = "Save Image";
             // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(390, 363);
-            this.Controls.Add(this.pictureBox1);
+            this.ClientSize = new System.Drawing.Size(390, 397);
+            this.Controls.Add(this.pBGrabImage);
             this.Name = "Main";
             this.Text = "Press F2 to set Rectangle";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Main_FormClosing);
+            ((System.ComponentModel.ISupportInitialize)(this.pBGrabImage)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pBGrabImage;
+        private System.Windows.Forms.SaveFileDialog saveFileDialog1;
     }
 }
 
